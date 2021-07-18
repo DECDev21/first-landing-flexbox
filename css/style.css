@@ -1,39 +1,81 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap'); 
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at 30% 30%, white 15px, #F2AE26 20%, #BA591B  40%);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    height: 500px;
+    outline: 2px solid crimson;
+    margin: 20px auto;
     display: flex;
-    min-height: 100vh;
 }
 
-form {
-    padding: 1em;
+.hero {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-input {
-    display: block;
+.hero__picture {
     margin-bottom: 1em;
 }
 
-[type="checkbox"] {
-    display: inline-block;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 1em;
-}
-
-.img img {
-    width: 100%;
+.hero__img {
     display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/*.ball {
-    --size:80px;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    background: rebeccapurple;
-    margin: auto;
+.hero__texts {
+    flex-basis: 40%;
 }
-*/
+
+.hero__paragraph {
+    line-height: 1.5;
+    font-weight: 300;
+    padding: .7em 0;
+}
+
+.hero__cta {
+    display: inline-block;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    background: rgb(0,81,164);
+    background: linear-gradient(0deg, rgba(0,81,164,1) 0%, rgba(0,114,233,1) 33%, rgba(0,125,255,1) 100%); 
+}
+
+@media screen and (min-width: 850px) {
+    .hero {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero__picture {
+        flex-grow: 1;
+    }
+
+    .hero__title {
+        font-size: 3rem;
+    }
+
+    body {
+        background: radial-gradient(circle at 31% 50%, white 15px, #F2AE26 20%, #BA591B  40%);
+    }
+}
